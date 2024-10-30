@@ -53,6 +53,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - conda-forge/jupyter-collaboration
     - bollwyvl
     # TODO: uncommment as PR #1 on feedstock
     # - conda-forge/jupyter-collaboration
