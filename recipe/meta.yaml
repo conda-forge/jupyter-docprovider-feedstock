@@ -1,4 +1,4 @@
-{% set version = "1.0.1" %}
+{% set version = "1.1.0" %}
 {% if 1 %}{% set jupyterlab = "jupyterlab >=4.2.0,<5" %}{% endif %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-docprovider/jupyter_docprovider-{{ version }}.tar.gz
-  sha256: d0c1bcd4a2e9781acd143f28b1b84685921573b347969f542388fc408c1f8dce
+  sha256: c2ddc8d9a82329fff0a95261cc827b669359876af7fb2f2bafa8dbdf839ab172
 
 build:
   noarch: python
