@@ -41,7 +41,7 @@ tests:
   - requirements:
       run:
         - jupyterlab
-        - python ${{ python_min }}
+        - python ${{ python_min }}.*
         - if: win
           then:
             - m2-grep
