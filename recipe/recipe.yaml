@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: 2.0.0
+  jupyterlab: jupyterlab >=4.4.0,<5
+
+package:
+  name: jupyter-docprovider
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/j/jupyter-docprovider/jupyter_docprovider-${{ version }}.tar.gz
+  sha256: e1873692fdc395337d7d603a5d03fad48a1bd25eb401cac69f4c4dfe5c58d690
+
+build:
+  number: 0
+  noarch: python
+  script:
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+
+requirements:
+  host:
+    - ${{ jupyterlab }}
+    - hatch-jupyter-builder >=0.5
+    - hatchling >=1.4.0
+    - pip
+    - python ${{ python_min }}.*
+  run:
+    - python >=${{ python_min }}
+  run_constraints:
+    - ${{ jupyterlab }}
+
+tests:
+  - python:
+      imports: jupyter_docprovider
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - 3.13.*
+  - requirements:
+      run:
+        - jupyterlab
+        - python ${{ python_min }}
+        - if: win
+          then:
+            - m2-grep
+    script:
+      - jupyter labextension list
+      - jupyter labextension list 1>labextensions 2>&1
+      - "grep -iE \"docprovider-extension.*OK\" labextensions"
+
+about:
+  summary: JupyterLab/Jupyter Notebook 7+ extension integrating collaborative shared models.
+  license: BSD-3-Clause
+  license_file:
+    - LICENSE
+    - jupyter_docprovider/labextension/static/third-party-licenses.json
+  homepage: https://github.com/jupyterlab/jupyter-collaboration
+  documentation: https://jupyterlab-realtime-collaboration.readthedocs.io
+
+extra:
+  recipe-maintainers:
+    - conda-forge/jupyter-collaboration
+    - bollwyvl
