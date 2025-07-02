@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "2.0.2"
+  version: "2.1.0"
   jupyterlab: jupyterlab >=4.4.0,<5
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-docprovider/jupyter_docprovider-${{ version }}.tar.gz
-  sha256: bd680d960e98770e2f6b70e5131dc0fccf6e134b79e064eb5759639a55f8e135
+  sha256: 8af661c65300334577fa2e26a65b6086fbf6674d6296ddebbfafd74d418c94d3
 
 build:
   number: 0
@@ -48,7 +48,7 @@ tests:
     script:
       - jupyter labextension list
       - jupyter labextension list 1>labextensions 2>&1
-      - "grep -iE \"docprovider-extension.*OK\" labextensions"
+      - grep -iE "docprovider-extension.*OK" labextensions
 
 about:
   summary: JupyterLab/Jupyter Notebook 7+ extension integrating collaborative shared models.
