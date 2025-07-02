@@ -148,3 +148,6 @@ Feedstock Maintainers
 * [@bollwyvl](https://github.com/bollwyvl/)
 * [@conda-forge/jupyter-collaboration](https://github.com/orgs/conda-forge/teams/jupyter-collaboration/)
 
+
+<!-- dummy commit to enable rerendering -->
+
