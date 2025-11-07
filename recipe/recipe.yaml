@@ -2,8 +2,7 @@
 schema_version: 1
 
 context:
-  version: "2.1.1"
-  jupyterlab: jupyterlab >=4.4.0,<5
+  version: "1.1.1"
 
 package:
   name: jupyter-docprovider
@@ -11,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-docprovider/jupyter_docprovider-${{ version }}.tar.gz
-  sha256: 7303f352853477d8a96e3de61000f30a9b7dee7f7c0237d552caeea4f4444779
+  sha256: 8ff07073dc0375724ae40ef7558d64835a9fa983ce4945ce85df70641d0208e2
 
 build:
   number: 0
@@ -21,15 +20,12 @@ build:
 
 requirements:
   host:
-    - ${{ jupyterlab }}
     - hatch-jupyter-builder >=0.5
     - hatchling >=1.4.0
     - pip
     - python ${{ python_min }}.*
   run:
     - python >=${{ python_min }}
-  run_constraints:
-    - ${{ jupyterlab }}
 
 tests:
   - python:
@@ -37,10 +33,9 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - 3.13.*
+        - 3.14.*
   - requirements:
       run:
-        - jupyterlab
         - python ${{ python_min }}.*
     script:
       - jupyter labextension list
