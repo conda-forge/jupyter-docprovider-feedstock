@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "1.1.1"
+  version: "1.1.2"
 
 package:
   name: jupyter-docprovider
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-docprovider/jupyter_docprovider-${{ version }}.tar.gz
-  sha256: 8ff07073dc0375724ae40ef7558d64835a9fa983ce4945ce85df70641d0208e2
+  sha256: 9bf6723a8257ccd60a7c47b7a72194ab03f3475607d43121b9a5ae91aaaa3e29
 
 build:
   number: 0
