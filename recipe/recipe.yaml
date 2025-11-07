@@ -37,6 +37,7 @@ tests:
   - requirements:
       run:
         - python ${{ python_min }}.*
+        - jupyterlab
     script:
       - jupyter labextension list
       - jupyter labextension list --debug 2>&1 | python -c "import re, sys; v = sys.stdin.read(); assert re.search(r'docprovider-extension.*OK', v)"
