@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "2.1.1"
+  version: "2.1.2"
   jupyterlab: jupyterlab >=4.4.0,<5
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-docprovider/jupyter_docprovider-${{ version }}.tar.gz
-  sha256: 7303f352853477d8a96e3de61000f30a9b7dee7f7c0237d552caeea4f4444779
+  sha256: 9479c298e7aaa4497f252accc1eb7db398178dd0edcbb37efd558a87b661e38c
 
 build:
   number: 0
