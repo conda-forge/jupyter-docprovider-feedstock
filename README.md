@@ -3,11 +3,13 @@ About jupyter-docprovider-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyter-docprovider-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/jupyterlab/jupyter-collaboration
+Home: https://pypi.org/project/jupyter-docprovider
 
 Package license: BSD-3-Clause
 
 Summary: JupyterLab/Jupyter Notebook 7+ extension integrating collaborative shared models.
+
+Development: https://github.com/jupyterlab/jupyter-collaboration
 
 Documentation: https://jupyterlab-realtime-collaboration.readthedocs.io/
 
