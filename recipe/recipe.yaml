@@ -2,10 +2,11 @@
 schema_version: 1
 
 context:
-  version: "2.2.1"
+  version: "2.3.0"
   jupyterlab_min: "4.5.0"
   jupyterlab_max: "5"
   python_check_max: "3.14"
+  grep: ${{ 'grep -iE' if unix else 'findstr /c' }}
 
 package:
   name: jupyter-docprovider
@@ -13,7 +14,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-docprovider/jupyter_docprovider-${{ version }}.tar.gz
-  sha256: d8aa3b5db3b9b401de05159df8da36e2d87485e6dcdf597a20e58c921f705dda
+  sha256: c09808e15e93f2ea4ff194a18c7a8c8f83d81049fa91b09de24b09adeac9d572
 
 build:
   number: 0
@@ -46,7 +47,7 @@ tests:
         - python ${{ python_min }}.*
     script:
       - jupyter labextension list
-      - jupyter labextension list --debug 2>&1 | python -c "import re, sys; v = sys.stdin.read(); assert re.search(r'docprovider-extension.*OK', v)"
+      - jupyter labextension list --debug 2>&1 | ${{ grep }} "docprovider-extension.*OK"
 
 about:
   summary: JupyterLab/Jupyter Notebook 7+ extension integrating collaborative shared models.
@@ -54,7 +55,8 @@ about:
   license_file:
     - LICENSE
     - jupyter_docprovider/labextension/static/third-party-licenses.json
-  homepage: https://github.com/jupyterlab/jupyter-collaboration
+  homepage: https://pypi.org/project/jupyter-docprovider
+  repository: https://github.com/jupyterlab/jupyter-collaboration
   documentation: https://jupyterlab-realtime-collaboration.readthedocs.io
 
 extra:
