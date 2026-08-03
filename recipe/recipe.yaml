@@ -2,9 +2,9 @@
 schema_version: 1
 
 context:
-  version: "2.4.2"
-  jupyterlab_min: "4.5.0"
-  jupyterlab_max: "4.6.0"
+  version: "3.0.0"
+  jupyterlab_min: "4.6.0"
+  jupyterlab_max: "4.7.0"
   python_check_max: "3.14"
   grep: ${{ 'grep -iE' if unix else 'findstr /c' }}
 
@@ -14,7 +14,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-docprovider/jupyter_docprovider-${{ version }}.tar.gz
-  sha256: 7265d30d60930064b3e4b265f694f852216d93d60fb06bd2e398cb327dee38a8
+  sha256: 2d8b5c2014cb4d7af380e67855b712cd604b4ee4817490826e65ff353b1936d9
 
 build:
   number: 0
@@ -24,9 +24,9 @@ build:
 
 requirements:
   host:
-    - jupyterlab >=${{ jupyterlab_min }},<${{ jupyterlab_max }}
     - hatch-jupyter-builder >=0.5
     - hatchling >=1.4.0
+    - jupyter-builder >=1.2.0
     - pip
     - python ${{ python_min }}.*
   run:
