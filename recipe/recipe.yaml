@@ -3,8 +3,8 @@ schema_version: 1
 
 context:
   version: "3.0.0"
-  jupyterlab_min: "4.5.0"
-  jupyterlab_max: "4.6.0"
+  jupyterlab_min: "4.6.0"
+  jupyterlab_max: "4.7.0"
   python_check_max: "3.14"
   grep: ${{ 'grep -iE' if unix else 'findstr /c' }}
 
@@ -24,9 +24,9 @@ build:
 
 requirements:
   host:
-    - jupyterlab >=${{ jupyterlab_min }},<${{ jupyterlab_max }}
     - hatch-jupyter-builder >=0.5
     - hatchling >=1.4.0
+    - jupyter-build >=1.2.0
     - pip
     - python ${{ python_min }}.*
   run:
