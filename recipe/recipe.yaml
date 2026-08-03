@@ -26,7 +26,7 @@ requirements:
   host:
     - hatch-jupyter-builder >=0.5
     - hatchling >=1.4.0
-    - jupyter-build >=1.2.0
+    - jupyter-builder >=1.2.0
     - pip
     - python ${{ python_min }}.*
   run:
