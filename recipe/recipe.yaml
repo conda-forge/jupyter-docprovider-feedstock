@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "3.0.2"
+  version: "3.0.3"
   jupyterlab_min: "4.6.0"
   jupyterlab_max: "4.7.0"
   python_check_max: "3.14"
@@ -14,7 +14,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-docprovider/jupyter_docprovider-${{ version }}.tar.gz
-  sha256: f5ec96ee12ac4f34ffa48bd576262b24b525900f8ccca2bd7234ebcc71b133bf
+  sha256: 6d8e9e4395dd4e3d962ccde8c8df6cf299a73d0b0c35bbe564a9fe61a795b566
 
 build:
   number: 0
